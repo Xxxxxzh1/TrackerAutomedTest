@@ -1,4 +1,3 @@
-#!/usr/local/bin/python3
 
 import curl_pan
 import os
