@@ -25,7 +25,6 @@ def detect_output(number):
 
 
 if __name__ == "__main__":
-    
     curl_pan.download_vid(count)
     track_output(count)
     detect_output(count)
