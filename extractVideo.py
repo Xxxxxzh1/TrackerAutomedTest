@@ -18,8 +18,6 @@ def getVdieo(count, tar_list, video_list):
         # 得到当前压缩包所有视频名称列表
         videoInTar_list = os.listdir('./video_tar/Temp_video/')
 
-        print(videoInTar_list)
-
         for videoInTar_name in videoInTar_list:
             rename_shell = f"mv ./video_tar/Temp_video/{videoInTar_name} ./video_mp4/{vid_count}_video.mp4"
             # 给解压得到的视频重命名并移至/video_mp4/路径

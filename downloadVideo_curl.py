@@ -16,8 +16,7 @@ def download_tar(count, tar_list, video_list):
         os.system(downloadTar_shell)
         tar_list.append(f"{list_count}_video.tar")
         list_count += 1
-
-    print('111111'+tar_list)
+        print('11111'+tar_list[-1])
 
     # 调用函数解压当前所有压缩文件
     extractVideo.getVdieo(count, tar_list, video_list)
