@@ -1,32 +1,33 @@
-#!/usr/local/bin/python3
 
 import os
 
 
-def tar_video(count, tar_list, video_list):
+def getVdieo(count, tar_list, video_list):
 
-    video_list.clear
     vid_count = count
+    videoInTar_list = []
 
-    for list in tar_list:
+    for fileName in tar_list:
 
-        tar_shell = f"tar -xzvf ./video_tar/{list} --strip-components 1 -C ./video_tar/Temp_video/"
+        tar_shell = f"tar -xzvf ./video_tar/{fileName} --strip-components 1 -C ./video_tar/Temp_video/"
         rmDS_shell = f"rm -rf ./video_tar/Temp_video/.DS_Store"
-        rmTempVideo_shell = "rm -rf ./video_tar/Temp_video/*"
 
+        # 提取压缩包次级文件夹下的所有视频至/Temp_video/路径下
         os.system(tar_shell)
+
         os.system(rmDS_shell)
-        tarVideo_list = os.listdir('./video_tar/Temp_video/')
+        # 得到当前压缩包所有视频名称列表
+        videoInTar_list = os.listdir('./video_tar/Temp_video/')
 
-        print(tarVideo_list)
+        print(videoInTar_list)
 
-        for tarVideo_name in tarVideo_list:
-            rename_shell = f"mv ./video_tar/Temp_video/{tarVideo_name} ./video_mp4/{vid_count}_video.mp4"
+        for videoInTar_name in videoInTar_list:
+            rename_shell = f"mv ./video_tar/Temp_video/{videoInTar_name} ./video_mp4/{vid_count}_video.mp4"
+            # 给解压得到的视频重命名并移至/video_mp4/路径
             os.system(rename_shell)
+
             video_list.append(f"{vid_count}_video.mp4")
             vid_count += 1
-
-        os.system(rmTempVideo_shell)
 
     print(video_list)
     return video_list
