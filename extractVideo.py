@@ -5,6 +5,7 @@ import os
 def getVdieo(count, tar_list, video_list):
 
     vid_count = count
+    video_list.clear
 
     for fileName in tar_list:
 
