@@ -9,7 +9,8 @@ downloadVid_list = []
 
 def track_output(number, video_list):
     outVid_count = number
-    print('222222222')
+    for i in video_list:
+        print('222222222+'+i)
     for video_name in video_list:
         print('3333333', video_name)
         # -t '1' 为track状态
