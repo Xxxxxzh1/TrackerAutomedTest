@@ -5,7 +5,6 @@ import os
 def getVdieo(count, tar_list, video_list):
 
     vid_count = count
-    videoInTar_list = []
 
     for fileName in tar_list:
 
@@ -28,6 +27,3 @@ def getVdieo(count, tar_list, video_list):
 
             video_list.append(f"{vid_count}_video.mp4")
             vid_count += 1
-
-    print(video_list)
-    return video_list
