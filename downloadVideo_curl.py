@@ -7,6 +7,9 @@ import extractVideo
 def download_tar(count, tar_list, video_list):
     list_count = count
     tar_list.clear
+    video_list.clear
+    ferry_list = video_list
+    ferry_tar_list = tar_list
     os.system('rm -rf ./video_tar/*')
     os.system('mkdir ./video_tar/Temp_video')
 
@@ -19,7 +22,10 @@ def download_tar(count, tar_list, video_list):
         print('11111'+tar_list[-1])
 
     # 调用函数解压当前所有压缩文件
-    extractVideo.getVdieo(count, tar_list, video_list)
+    extractVideo.getVdieo(count, ferry_tar_list, ferry_list)
+    video_list = ferry_list
+    tar_list = ferry_tar_list
+    return tar_list, video_list
 
 
 def download_vid(count, video_list):
