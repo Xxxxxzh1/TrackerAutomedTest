@@ -8,6 +8,5 @@ folder_sharelink = [
 
 # track验证视频--俯视folder--视频详情sharelink
 video_sharelink = [
-    'http://pan.zerozero.cn:88/index.php/s/nYRGUNYQjlUtqtb',
-    'http://pan.zerozero.cn:88/index.php/s/uuIMUbDTkGJW6lI'
+    'http://pan.zerozero.cn:88/index.php/s/nYRGUNYQjlUtqtb'
     ]
