@@ -8,6 +8,7 @@ def download_tar(count, tar_list, video_list):
     tarList_count = count
     tar_list.clear
     video_list.clear
+    os.system("rm -rf ./video_mp4/*")
     os.system("rm -rf ./video_tar/*")
     os.system("mkdir ./video_tar/Temp_video")
 
@@ -18,6 +19,7 @@ def download_tar(count, tar_list, video_list):
         tar_list.append(f"{tarList_count}_video.tar")
         tarList_count += 1
 
+    print('current tar_list: ', tar_list)
     # 调用函数解压当前所有压缩文件
     extractVideo.getVdieo(count, tar_list, video_list)
 

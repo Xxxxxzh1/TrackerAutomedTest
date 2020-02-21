@@ -25,3 +25,4 @@ def getVdieo(count, tar_list, video_list):
 
             video_list.append(f"{vid_count}_video.mp4")
             vid_count += 1
+    print('video in tar: ', video_list)
