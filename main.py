@@ -29,6 +29,6 @@ def detect_output(number, video_list):
 
 
 if __name__ == "__main__":
-    downloadVideo_curl.download_tar(initCount, downloadTar_list, downloadVid_list)
+    downloadVideo_curl.download_vid(initCount, downloadVid_list)
     track_output(initCount, downloadVid_list)
     detect_output(initCount, downloadVid_list)
