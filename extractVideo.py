@@ -6,9 +6,9 @@ def getVdieo(count, tar_list, video_list):
 
     vid_count = count
 
-    for fileName in tar_list:
+    for tarName in tar_list:
 
-        tar_shell = f"tar -xzvf ./video_tar/{fileName} --strip-components 1 -C ./video_tar/Temp_video/"
+        tar_shell = f"tar -xzvf ./video_tar/{tarName} --strip-components 1 -C ./video_tar/Temp_video/"
         rmDS_shell = f"rm -rf ./video_tar/Temp_video/.DS_Store"
 
         # 提取压缩包次级文件夹下的所有视频至/Temp_video/路径下
@@ -25,5 +25,3 @@ def getVdieo(count, tar_list, video_list):
 
             video_list.append(f"{vid_count}_video.mp4")
             vid_count += 1
-
-    return tar_list, video_list
