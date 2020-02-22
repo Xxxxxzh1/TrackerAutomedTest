@@ -4,24 +4,24 @@ import os
 import extractVideo
 
 
-def download_tar(count, tar_list, video_list):
-    tarList_count = count
-    tar_list.clear
+def download_zip(count, zip_list, video_list):
+    zipList_count = count
+    zip_list.clear
     video_list.clear
     os.system("rm -rf ./video_mp4/*")
-    os.system("rm -rf ./video_tar/*")
-    os.system("mkdir ./video_tar/Temp_video")
+    os.system("rm -rf ./video_zip/*")
+    # os.system("mkdir ./video_zip/Temp_video")
 
     # 按link中的链接下载所有压缩包
     for url in video_sharelink.folder_sharelink:
-        downloadTar_shell = f"curl -J -0 {url}/download --output ./video_tar/{tarList_count}_video.tar"
-        os.system(downloadTar_shell)
-        tar_list.append(f"{tarList_count}_video.tar")
-        tarList_count += 1
+        downloadZip_shell = f"curl -J -0 {url}/download --output ./video_zip/{zipList_count}_video.zip"
+        os.system(downloadZip_shell)
+        zip_list.append(f"{zipList_count}_video.zip")
+        zipList_count += 1
 
-    # print('current tar_list: ', tar_list)
+    # print('current zip_list: ', zip_list)
     # 调用函数解压当前所有压缩文件
-    extractVideo.getVdieo(count, tar_list, video_list)
+    extractVideo.getVideo(count, zip_list, video_list)
 
 
 def download_vid(count, video_list):
