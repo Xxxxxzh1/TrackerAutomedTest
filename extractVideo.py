@@ -6,7 +6,7 @@ def getVdieo(count, tar_list, video_list):
 
     vid_count = count
 
-    print('recieve information: ', count, tar_list, video_list)
+    # print('recieve information: ', count, tar_list, video_list)
 
     for tarName in tar_list:
 
@@ -19,13 +19,13 @@ def getVdieo(count, tar_list, video_list):
         os.system(rmDS_shell)
         # 得到当前压缩包所有视频名称列表
         videoInTar_list = os.listdir('./video_tar/Temp_video/')
-        print('video in tar: ', videoInTar_list)
-    
+        # print('video in tar: ', videoInTar_list)
+
         for videoInTar_name in videoInTar_list:
-            print('every pre_video name: ', videoInTar_name)
+            # print('every pre_video name: ', videoInTar_name)
             rename_shell = f"mv ./video_tar/Temp_video/{videoInTar_name} ./video_mp4/{vid_count}_video.mp4"
             # 给解压得到的视频重命名并移至/video_mp4/路径
             os.system(rename_shell)
             video_list.append(f"{vid_count}_video.mp4")
             vid_count += 1
-    print('video_list: ', video_list)
+    # print('video_list: ', video_list)
