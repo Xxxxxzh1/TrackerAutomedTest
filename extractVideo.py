@@ -18,7 +18,7 @@ def getVideo(count, zip_list, video_list):
 
         os.system(rmDS_shell)
         # 得到当前压缩包所有视频名称列表
-        videoInZip_list = os.listdir('./video_zip/Temp_video/*.mp4')
+        videoInZip_list = os.listdir('./video_zip/Temp_video/')
         print('video in zip: ', videoInZip_list)
 
         for videoInZip_name in videoInZip_list:
