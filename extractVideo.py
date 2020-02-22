@@ -10,7 +10,7 @@ def getVideo(count, zip_list, video_list):
 
     for zipName in zip_list:
 
-        extractZip_shell = f"unzip ./video_zip/{zipName} -d './video_zip/Temp_video' && directory=('./video_zip/Temp_video'/*) && mv './video_zip/Temp_video'/*/* './video_zip/Temp_video/' && rmdir ${directory[@]}"
+        extractZip_shell = f"unzip ./video_zip/{zipName} -d './video_zip/Temp_video/' && mv './video_zip/Temp_video'/*/* './video_zip/Temp_video/' && rmdir './video_zip/Temp_video/*'"
         rmDS_shell = f"rm -rf ./video_zip/Temp_video/.DS_Store"
 
         # 提取压缩包次级文件夹下的所有视频至/Temp_video/路径下
